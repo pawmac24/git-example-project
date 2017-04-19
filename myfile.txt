@@ -6,3 +6,4 @@ Fifth line in develop
 Fifth line in feature-A1
 Six line in develop
 7th line in develop
+7th line in feature-B1
