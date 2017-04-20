@@ -1,0 +1,164 @@
+git diff
+
+diff --git a/testowy.txt b/testowy.txt
+index 8023dd1..df31168 100644
+--- a/testowy.txt
++++ b/testowy.txt
+@@ -1 +1,2 @@
+ Lovely
++My family
+
+
+=======================================
+To synchronize your work, you run:
+https://git-scm.com/book/id/v2/Git-Branching-Remote-Branches
+git fetch origin
+
+git push -u origin mybranch-1
+git push origin mybranch-1
+or
+git push origin mybranch-1:mybranch-1
+
+===============================================
+https://git-scm.com/book/id/v2/Git-Branching-Remote-Branches
+
+git fetch :
+fetch down all the changes on the server that you don’t have yet,
+it will not modify your working directory at all.
+It will simply get the data for you and let you merge it yourself. 
+
+git pull:
+essentially a git fetch immediately followed by a git merge in most cases. 
+========================
+
+Delete remote branch if it is merged merged
+
+git checkout develop
+git branch --merged
+  develop
+* feature-D1
+git branch -d feature-D1
+git push origin --delete feature-D1
+
+========================================
+Rebase:
+https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+
+(example1 1)
+git checkout feature-C1
+git rebase develop
+
+First, rewinding head to replay your work on top of it...
+Applying: 9 and 10 line in feature-C1
+Using index info to reconstruct a base tree...
+M       myfile.txt
+Falling back to patching base and 3-way merge...
+Auto-merging myfile.txt
+CONFLICT (content): Merge conflict in myfile.txt
+error: Failed to merge in the changes.
+Patch failed at 0001 9 and 10 line in feature-C1
+The copy of the patch that failed is found in: .git/rebase-apply/patch
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+
+git add myfile.txt
+git rebase --continue
+git checkout develop
+git merge feature-C1
+
+git log --oneline --decorate
+a86b352 (HEAD -> develop, feature-C1) 9 and 10 line in feature-C1
+dba3853 (origin/develop) 11th line in develop
+6e1a018 8th line in feature-B1
+be00416 7th line in feature-B1
+53b371d 7th line in develop
+4382bcd merge feature-A1 into develop
+d171e2d Fifth and six line in develop
+28bcbcd Fifth line in feature-A1
+6349648 Forth line in develop
+ef18687 Third line in develop
+32dfa4b Second line
+e4798b7 Adding first line
+c337623 Adding myfile.txt
+
+==================================
+git checkout -b feature-B1
+
+the same as
+
+git branch feature-B1
+git checkout feature-B1
+
+===============
+git branch -a -v
+* develop                4382bcd merge feature-A1 into develop
+  master                 3f3e5d8 Third line
+  remotes/origin/develop 4382bcd merge feature-A1 into develop
+  remotes/origin/master  3f3e5d8 Third line
+
+git branch -v
+git branch --merged
+git branch --no-merged
+
+git branch -a -vv
+  develop                   267a8b9 [origin/develop] Merge branch 'feature-D1' of ... into feature-D1
+  master                    3f3e5d8 [origin/master] Third line
+* mybranch-1                305d083 [origin/mybranch-1] Lovely text
+  remotes/origin/develop    267a8b9 Merge branch 'feature-D1' of ... into feature-D1
+  remotes/origin/master     3f3e5d8 Third line
+  remotes/origin/mybranch-1 305d083 Lovely text
+
+======================================
+If you want to merge feature-A1 into develop
+
+git checkout develop
+git merge feature-A1
+
+If conficts update confict file then:
+git add myfile
+git commit -m "Merge feature-A1 into develop"
+git push origin develop
+
+and delete fully merged branch
+git branch -d feature-A1
+
+==============================
+
+git status
+
+===============================
+Add to stage and remove from stage:
+
+git add -A
+git add mysecondfile.txt
+git reset badfile.txt
+
+===============================
+
+git log -2 -p
+git log --oneline --decorate --graph --all
+===========================================
+
+https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
+
+git log --oneline --decorate
+git log -2 -p
+
+git branch feature-A1
+git checkout feature-A1
+
+//if you want to push and create a remote branch feature-A1
+git push -u origin feature-A1
+
+git remote -v
+git remote add origin https://github.com/pawmac24/git-example-project.git
+
+git commit -a -m "This is commit"
+=======================
+git init
+===============
+
+git clone  https://github.com/pawmac24/git-example-project.git
+=====================
