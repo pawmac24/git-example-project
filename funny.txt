@@ -3,5 +3,8 @@ funny 2
 funny 3
 funny 4
 Hello 1
+Bye 1
 Hello 2
+Bye 2
 Hello 3
+Bye 3
