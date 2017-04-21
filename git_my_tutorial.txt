@@ -139,6 +139,22 @@ git reset badfile.txt
 
 git log -2 -p
 git log --oneline --decorate --graph --all
+
+git log --oneline --stat
+0a238eb Funny 4 text
+ funny.txt | 1 +
+ 1 file changed, 1 insertion(+)
+8602406 Funny 3 text
+ funny.txt | 1 +
+ 1 file changed, 1 insertion(+)
+c9029b8 Funny 2 text
+ funny.txt | 1 +
+ 1 file changed, 1 insertion(+)
+a570b8c Funny file
+ funny.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+
 ===========================================
 
 https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell
