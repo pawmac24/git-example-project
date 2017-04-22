@@ -178,3 +178,16 @@ git init
 
 git clone  https://github.com/pawmac24/git-example-project.git
 =====================
+
+https://www.atlassian.com/git/tutorials/rewriting-history#git-commit--amend
+
+# Edit hello.txt and main.txt
+git add hello.txt
+git commit
+# Realize you forgot to add the changes from main.txt
+git add main.txt
+git commit --amend --no-edit
+
+--no-edit ===  make the amendment to your commit without changing its commit message
+
+===================================
