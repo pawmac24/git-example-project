@@ -191,3 +191,21 @@ git commit --amend --no-edit
 --no-edit ===  make the amendment to your commit without changing its commit message
 
 ===================================
+
+Stash changes:
+https://www.atlassian.com/git/tutorials/git-stash
+
+git status
+
+#takes your uncommitted changes (both staged and unstaged), saves them away for later use,
+#and then reverts them from your working copy. 
+git stash
+
+git status
+
+#Popping your stash removes the changes from your stash
+#and reapplies them to your working copy.
+git stash pop
+
+#reapply the changes to your working copy and keep them in your stash
+git stash apply
