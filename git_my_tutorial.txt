@@ -44,9 +44,12 @@ git push origin --delete feature-D1
 Rebase:
 https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 
-(example1 1)
+(example 1)
 git checkout feature-C1
 git rebase develop
+or
+#interactively:
+git rebase -i develop
 
 First, rewinding head to replay your work on top of it...
 Applying: 9 and 10 line in feature-C1
@@ -189,6 +192,10 @@ git add main.txt
 git commit --amend --no-edit
 
 --no-edit ===  make the amendment to your commit without changing its commit message
+
+or
+
+git commit --amend -m "New commit message if wrong"
 
 ===================================
 
